@@ -9,7 +9,7 @@ class Hookz < Formula
 
   on_macos do
     url "https://github.com/devops-kung-fu/hookz/releases/download/v2.4.1/hookz_2.4.1_darwin_all.tar.gz"
-    sha256 "01e70b0f20e42b6193cbb2fd591e550ca00105837951906ceb9b69f4af5b3320"
+    sha256 "ca8e715bb58e7aaf9dc9b9064be4b32143e51ec52ddd2b04bfd0e105c81a1e2f"
 
     def install
       bin.install "hookz"
@@ -17,9 +17,9 @@ class Hookz < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/devops-kung-fu/hookz/releases/download/v2.4.1/hookz_2.4.1_linux_armv6.tar.gz"
-      sha256 "ae9c45f35a461c7c9d9ce77058b9811d4a24a29f59ec92d7d9acc3cc3a9714b0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/devops-kung-fu/hookz/releases/download/v2.4.1/hookz_2.4.1_linux_arm64.tar.gz"
+      sha256 "1967b19e775819fafcfd0bdc89b71f637ec4fb71e7f1c301ea644ff66c68276f"
 
       def install
         bin.install "hookz"
@@ -27,15 +27,7 @@ class Hookz < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/devops-kung-fu/hookz/releases/download/v2.4.1/hookz_2.4.1_linux_amd64.tar.gz"
-      sha256 "11ed5e7dcd02917ce0e6e6f94156e8429134eec4fa85c64602eaffe211ede0b7"
-
-      def install
-        bin.install "hookz"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/devops-kung-fu/hookz/releases/download/v2.4.1/hookz_2.4.1_linux_arm64.tar.gz"
-      sha256 "4a4fae601c45bd479803c88a6f1190083d8125238c58cb319ea3ef99c4633c84"
+      sha256 "cf2414dbc7208f7f0a0ce67057244eaf754460771004eeb3a79610638ffd9324"
 
       def install
         bin.install "hookz"
