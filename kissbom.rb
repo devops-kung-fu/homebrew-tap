@@ -9,7 +9,7 @@ class Kissbom < Formula
 
   on_macos do
     url "https://github.com/devops-kung-fu/kissbom/releases/download/v0.0.2/kissbom_0.0.2_darwin_all.tar.gz"
-    sha256 "b34f6b48d1d15ee43460ffa41ef168e927bc71b11ae40115456b6ff27b34db7b"
+    sha256 "f1e8e357b8752693d6448316165e6ce99e40db185cf02ff683f666de313aa957"
 
     def install
       bin.install "kissbom"
@@ -19,7 +19,7 @@ class Kissbom < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/devops-kung-fu/kissbom/releases/download/v0.0.2/kissbom_0.0.2_linux_arm64.tar.gz"
-      sha256 "9388d5f7c412c063501734044d45d3129c528447fa8ed80a78495bcab92d8bd8"
+      sha256 "54c26dd8050ae89bd008a25bff01c731d03a5a4552e9cf37ce7fa64adca8b384"
 
       def install
         bin.install "kissbom"
@@ -27,7 +27,7 @@ class Kissbom < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/devops-kung-fu/kissbom/releases/download/v0.0.2/kissbom_0.0.2_linux_amd64.tar.gz"
-      sha256 "91605d76d411560d03f3656c67551fdf1544f0915d9dd36860d2254e355aa227"
+      sha256 "ada1c3f8c0ed257e446374dbf5478942eb6756dc1e25e5c908ec9abb41fc589e"
 
       def install
         bin.install "kissbom"
