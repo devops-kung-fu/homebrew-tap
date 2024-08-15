@@ -5,11 +5,11 @@
 class Bomber < Formula
   desc ""
   homepage "https://github.com/devops-kung-fu/bomber"
-  version "0.4.8"
+  version "0.5.0"
 
   on_macos do
-    url "https://github.com/devops-kung-fu/bomber/releases/download/v0.4.8/bomber_0.4.8_darwin_all.tar.gz"
-    sha256 "2ffc0c76d595f67d53ac384a1a7e0aea161727aed0ebb641f0636aedacd50d31"
+    url "https://github.com/devops-kung-fu/bomber/releases/download/v0.5.0/bomber_0.5.0_darwin_all.tar.gz"
+    sha256 "8b7e5a02f9ffafb042efde184c372fddda9549034042dece734ca91b1c6ab469"
 
     def install
       bin.install "bomber"
@@ -17,20 +17,24 @@ class Bomber < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/devops-kung-fu/bomber/releases/download/v0.4.8/bomber_0.4.8_linux_amd64.tar.gz"
-      sha256 "da9f41d9df113a34f2c6c76d7b1cad39af73c5ba10499c3be24486655fa4fe0a"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/devops-kung-fu/bomber/releases/download/v0.5.0/bomber_0.5.0_linux_amd64.tar.gz"
+        sha256 "568fbade957fd66f811c74dcaf107328b4ad50b04ca70a4b973ce8ee2ae5f3a3"
 
-      def install
-        bin.install "bomber"
+        def install
+          bin.install "bomber"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/devops-kung-fu/bomber/releases/download/v0.4.8/bomber_0.4.8_linux_arm64.tar.gz"
-      sha256 "70a6b6e82fb692d25db7db6c281ff6846b2bb5a765d0a78b2f8a829fac57d1f9"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/devops-kung-fu/bomber/releases/download/v0.5.0/bomber_0.5.0_linux_arm64.tar.gz"
+        sha256 "b0fcf5aa2e7380444598443281b2bddf06925de438a85b96eba7dc9411bfa951"
 
-      def install
-        bin.install "bomber"
+        def install
+          bin.install "bomber"
+        end
       end
     end
   end
